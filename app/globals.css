@@ -10,4 +10,7 @@ body {
   --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
     'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
+  background-image: url('../Docs/Formularios/fondo-tropical-colorido-degradado/9403212.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
 }

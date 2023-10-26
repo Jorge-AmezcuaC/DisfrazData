@@ -1,16 +1,19 @@
 import Link from "next/link";
+import './nav.css'
 
 export default function Nav() {
     return(
-        <nav>
-            <div>
-                <h3><Link href={'/inicio'}>DisfrazData</Link></h3>
+        <nav className="navbar">
+            <div className="navbar-logo">
+                <h3>
+                    <Link href={'/inicio'} className="navbar-title">DisfrazData</Link>
+                </h3>
             </div>
-            <div>
+            <div className="navbar-search">
+                <button>🔎</button>
                 <input type="search" placeholder="search"/>
-                <button>Buscar</button>
             </div>
-            <div>
+            <div className="navbar-options">
                 <ul>
                     <li>
                         <button><Link href={'/inicio/admin'}>Inventario</Link></button>
