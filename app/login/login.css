@@ -1,0 +1,103 @@
+.login-page{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.login-container{
+    background-color: #fff;
+    border: solid 2px #000;
+    border-radius: 20px;
+    width: 60%;
+    min-width: 700px;
+    height: 70%;
+    display: flex;
+}
+.login-left{
+    width: 65%;
+    background-image: url('../../Docs/Formularios/login.jpg');
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin: 2px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.login-left-title{
+    color: var(--color-morado-primario);
+    text-align: center;
+    font-weight: 800;
+    font-size: 40px;
+    margin-top: 10px;
+    font-family: cursive;
+    letter-spacing: 3px;
+}
+.login-rigth{
+    width: 35%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-left: solid 2px #000;
+}
+.login-rigth-title{
+    color: var(--color-morado-primario);
+    text-align: center;
+    font-weight: 700;
+    font-family: cursive;
+    font-size: 25px;
+    height: 30%;
+    display: flex;
+    align-items: center;
+}
+.login-input-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    height: 20%;
+}
+.login-input{
+    margin-bottom: 20px;
+    width: 80%;
+    border: solid 3px #000;
+    height: 35px;
+    padding-left: 5px;
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.login-button-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+.login-button{
+    border: solid 3px #000;
+    background-color: var(--color-morado-primario);
+    color: #fff;
+    font-weight: 700;
+    width: 99%;
+    height: 35px;
+    font-family: cursive;
+    box-shadow: 3px 3px #000;
+    font-size: 100%;
+    border-radius: 5px;
+}
+.login-button:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--color-morado-primario);
+}
+.login-tologup{
+    color: var(--color-azul-primario);
+    text-decoration: underline;
+    font-weight: 600;
+    text-align: right;
+    width: 80%;
+    margin-top: 5px;
+    font-size: 15px;
+}
+.login-links{
+    width: 80%;
+}

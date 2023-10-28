@@ -23,7 +23,8 @@
 }
 .navsect-title{
     color: #fff;
-    font-size: x-large;
+    font-size: 100%;
     text-align: center;
     margin-bottom: 20px;
+    font-weight: 700;
 }
