@@ -1,5 +1,6 @@
 import Link from "next/link";
 import './nav.css'
+import { FaCubes, FaShoppingBasket, FaUser, FaSearch} from "react-icons/fa";
 
 export default function Nav() {
     return(
@@ -10,19 +11,19 @@ export default function Nav() {
                 </h3>
             </div>
             <div className="navbar-search">
-                <button>🔎</button>
+                <button><FaSearch/></button>
                 <input type="search" placeholder="search"/>
             </div>
             <div className="navbar-options">
                 <ul>
                     <li>
-                        <button><Link href={'/inicio/admin'}>Inventario</Link></button>
+                        <Link href={'/inicio/admin'}><FaCubes color="#fff" size={40}/></Link>
                     </li>
                     <li>
-                        <button><Link href={'/inicio/carro'}>Carro</Link></button>
+                        <Link href={'/inicio/carro'}><FaShoppingBasket color="#fff" size={40}/></Link>
                     </li>
                     <li>
-                        <button>Profile</button>
+                        <button><FaUser color="#fff" size={40}/></button>
                     </li>
                 </ul>
             </div>
