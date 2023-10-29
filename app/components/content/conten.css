@@ -1,0 +1,9 @@
+.content-container{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow: auto;
+    overflow-x: hidden;
+    height: 91vh;
+    width: 89vw;
+}
