@@ -1,5 +1,6 @@
 import Image from "next/image"
 import './card.css'
+import Modal from "../details/Modal"
 
 export default function Card(props) {
     const data = props.data
@@ -27,7 +28,7 @@ export default function Card(props) {
                     })}
                 </div>
             </div>
-            <button className="card-button">Detalles</button>
+            <Modal data={data}/>
         </div>
     )
 }
