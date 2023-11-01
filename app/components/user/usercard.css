@@ -1,0 +1,59 @@
+.usercard-container{
+    position: absolute;
+    top: 8vh;
+    right: 30px;
+    background-color: #fff;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: solid #000 3px;
+    border-radius: 20px;
+    width: 200px;
+}
+.usercard-action1{
+    position: absolute;
+    top: 5px;
+    right: 1vw;
+    width: 40px;
+    height: 40px;
+    background: none !important;
+    z-index: 1;
+}
+.usercard-action1:hover ,.usercard-action2:hover{
+    cursor: pointer;
+}
+.usercard-action2{
+    background: none !important;
+    color: #000 !important;
+    width: 10px !important;
+    height: 10px !important;
+    align-self: flex-end;
+    font-weight: 700;
+    margin: 10px;
+}
+.usercard-menu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-bottom: 10px;
+}
+.usercard-name{
+    color: #000;
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 10px;
+}
+.usercard-button{
+    width: 100% !important;
+    border: 1px solid #000 !important;
+    background-color: var(--color-rojo-secundario) !important;
+    font-weight: 700;
+    font-family: cursive;
+    text-align: left;
+    padding-left: 10px;
+}
+.usercard-button:hover{
+    cursor: pointer;
+    background-color: var(--color-rojo-primario) !important;
+}

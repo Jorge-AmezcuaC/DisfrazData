@@ -1,5 +1,7 @@
 import Link from "next/link";
 import './nav.css'
+import UserCard from "../user/userCard";
+
 import { FaCubes, FaShoppingBasket, FaUser, FaSearch} from "react-icons/fa";
 
 export default function Nav() {
@@ -23,7 +25,7 @@ export default function Nav() {
                         <Link href={'/inicio/carro'}><FaShoppingBasket color="#fff" size={40}/></Link>
                     </li>
                     <li>
-                        <button><FaUser color="#fff" size={40}/></button>
+                        <div><FaUser color="#fff" size={40}/><UserCard/></div>
                     </li>
                 </ul>
             </div>

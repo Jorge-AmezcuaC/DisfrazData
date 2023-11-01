@@ -18,4 +18,8 @@ body {
 :root{
   --color-azul-primario: #597EAA;
   --color-morado-primario: #674EA7;
+  --color-rojo-secundario: #E06666;
+  --color-rojo-primario: #CC0000;
+  --color-verde-primario: #6AA84F;
+  --color-verde-secundario: #00CC00;
 }
