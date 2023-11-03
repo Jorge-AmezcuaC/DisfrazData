@@ -9,7 +9,7 @@ export default function Card(props) {
     return(
         <div className="card">
             <div className="card-image">
-                <Image src={data.fotos[0].foto} fill style={{objectFit: 'contain'}} alt={`Disfraz de ${data.Nombre}`} sizes='any'/>
+                {data.fotos[0] && <Image src={data.fotos[0].foto} fill style={{objectFit: 'contain'}} alt={`Disfraz de ${data.Nombre}`} sizes='any'/>}
             </div>
             <div className="card-info">
                 <h3 className="card-name">{data.Nombre}</h3>
@@ -21,7 +21,7 @@ export default function Card(props) {
                     {tallas.map(item => {
                         return(
                             <div className="card-group" key={item}>
-                                <input type="checkbox" readOnly checked={JSON.stringify(data.tallas).includes(item)} className="card-checkbox"/>
+                                <input type="checkbox" readOnly checked={data.tallas.some(t => t.talla.talla == item)} className="card-checkbox"/>
                                 <label className="card-label">{item}</label>
                             </div>
                         )

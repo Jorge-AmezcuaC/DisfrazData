@@ -6,7 +6,7 @@ export default function Content(props) {
 
     return(
         <div className="content-container">
-           {data.map(item => {
+           {data && data.map(item => {
                 return(
                     <Card data={item}/>
                 )

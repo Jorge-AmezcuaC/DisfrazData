@@ -20,7 +20,7 @@ const Modal = (props) => {
                     <div className="modal-box">
                         <div className="modal-left">
                             <div className="modal-imagen">
-                                <Image src={data.fotos[0].foto} fill style={{objectFit: 'contain'}} alt={`Disfraz de ${data.Nombre}`} sizes='any'/>
+                                {data.fotos[0] && <Image src={data.fotos[0].foto} fill style={{objectFit: 'contain'}} alt={`Disfraz de ${data.Nombre}`} sizes='any'/>}
                             </div>
                             <button className="modal-button">Contactar Proveedor</button>
                             <button className="modal-button">Modificar</button>
@@ -37,11 +37,19 @@ const Modal = (props) => {
                                 <p>Precio</p>
                             </div>
                             <div className="modal-options">
-                                {/* {tallas.map(item => {
+                                {tallas.map(item => {
+                                    const pos = data.tallas.findIndex(t => t.talla.talla === item)
+                                    const exist = data.tallas[pos]
                                     return(
-                                        <div></div>
+                                        <div className="modal-data">
+                                            <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{item}</p>
+                                            <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{exist ? data.tallas[pos].maxStock : 0}</p>
+                                            <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{exist ? data.tallas[pos].minStock : 0}</p>
+                                            <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{exist ? data.tallas[pos].cantidad : 0}</p>
+                                            <p className={exist ? "modal-dataDetails" : "modal-noexist"}>${exist ? data.tallas[pos].precio : 0}</p>
+                                        </div>
                                     )
-                                })} */}
+                                })}
                             </div>
                         </div>
                     </div>

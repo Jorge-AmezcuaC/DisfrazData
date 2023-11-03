@@ -79,5 +79,28 @@
     font-size: 25px;
 }
 .modal-options{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
 
+.modal-data{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+.modal-dataDetails{
+    width: 15%;
+    border: 2px solid #000;
+    text-align: center;
+    font-family: cursive;
+    font-weight: 500;
+}
+.modal-noexist{
+    width: 15%;
+    border: 2px solid var(--color-rojo-primario);
+    text-align: center;
+    font-family: cursive;
+    font-weight: 500;
+    color: var(--color-rojo-primario);
 }

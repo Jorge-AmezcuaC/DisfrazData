@@ -1,4 +1,4 @@
-const host = 'http://localhost:8000/'
+const host = 'http://127.0.0.1:8000/'
 const disfraces = 'Disfraces/'
 const proveedores = 'Proveedores/'
 const ventas = 'Ventas/'
