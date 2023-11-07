@@ -16,8 +16,8 @@
     border-radius: 10px;
     z-index: 1;
     display: flex;
-    height: 70%;
-    width: 70%;
+    height: 90%;
+    width: 80%;
 }
 .modal-left{
     width: 40%;

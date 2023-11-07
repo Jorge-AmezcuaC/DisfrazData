@@ -74,7 +74,7 @@ export default function Form(props){
             <select className='formulario-input' onChange={event => setValues({...values, proveedor: event.target.value})}>
               {proveedor && proveedor.results.map(p => {
                 return(
-                  <option value={p.id} key={p.id}>{p.Nombre}</option>
+                  <option style={{backgroundColor: "#000"}} value={p.id} key={p.id}>{p.Nombre}</option>
                 )
               })}
             </select>

@@ -53,6 +53,16 @@ const postDisfraz = MainData => {
     .catch(e => console.log(e))
 }
 
+async function postProveedor(data) {
+    fetch(`${host}${proveedores}`,{
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+    })
+    .then(response => response.json())
+    .then(data => alert(`Proveedor: ${data.Nombre} Agregado!`))
+    .catch(e => console.log(e))
+}
 
 
-export {postDisfraz}
+export {postDisfraz, postProveedor}
