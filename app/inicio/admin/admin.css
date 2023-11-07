@@ -1,0 +1,10 @@
+.admin-empty{
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    text-shadow: 2px 2px #000;
+}
+.admin-layout{
+    background-color: #0004;
+    width: 100%;
+}

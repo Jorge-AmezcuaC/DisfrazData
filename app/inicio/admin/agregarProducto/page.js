@@ -1,8 +1,12 @@
-export default function AgregarProducto() {
+import '../formulario.css'
+import Form from './Form'
+import { getProveedor, getTalla } from '../../../request/get'
+
+export default async function AgregarProducto() {
+  const geT = await getTalla()
+  const data = await getProveedor()
     return (
-      <div>
-        AgregarProducto
-      </div>
+      <Form data={data} talla={geT}/>
     )
   }
   

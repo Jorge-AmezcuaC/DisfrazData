@@ -1,0 +1,40 @@
+.venta-container{
+    display: flex;
+    flex-direction: column;
+}
+.venta-header{
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+}
+.venta-title{
+    color: #fff;
+    font-weight: 600;
+    font-family: cursive;
+    font-size: 30px;
+}
+.venta-gen{
+    background-color: var(--color-verde-primario);
+    width: 150px;
+    height: 30px;
+    border: 2px solid #000;
+    color: #fff;
+    box-shadow: 2px 2px #000;
+    margin: 10px;
+}
+.venta-clean{
+    background-color: var(--color-rojo-secundario);
+    width: 150px;
+    height: 30px;
+    border: 2px solid #000;
+    color: #fff;
+    box-shadow: 2px 2px #000;
+    margin: 10px;
+}
+.venta-content{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 20px;
+    overflow: auto;
+}

@@ -1,8 +1,5 @@
+import '../formulario.css'
 export default function ModificarProducto() {
-    return (
-      <div>
-        ModificarProducto
-      </div>
-    )
+  return <h3 className='formulario-title'>Selecciona un producto para modificar</h3>
   }
   

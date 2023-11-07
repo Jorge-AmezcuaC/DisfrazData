@@ -3,6 +3,9 @@ import { useState } from "react"
 import Image from "next/image"
 import './modal.css'
 import {FaTimes} from 'react-icons/fa'
+import Link from "next/link"
+import { useRouter } from 'next/navigation'
+import { carroCookie } from "@/app/request/cookie"
 
 const Modal = (props) => {
     const data = props.data
@@ -10,10 +13,35 @@ const Modal = (props) => {
     const [isOpen, setIsOpen] = useState(false)
     const open = () => setIsOpen(true)
     const close = () => setIsOpen(false)
+    const [tallaSelected, setTallaSelected] = useState(data.tallas[0])
+    const [cantidad, setCantidad] = useState(1)
+    const router = useRouter()
+    
+    const changeTalla = (event) => {
+        setTallaSelected(JSON.parse(event.target.value))
+        setCantidad(1)
+    }
+    const changeCount = () => {
+        if(cantidad < tallaSelected.cantidad)
+            setCantidad(cantidad+1)
+    }
+    const reduceCount = () => {
+        if(cantidad > 1)
+            setCantidad(cantidad-1)
+    }
+
+    const prepararCompra = () => {
+        carroCookie(tallaSelected, cantidad, data)
+        router.push('inicio/carro')
+    }
+
+    useState(() => {
+        setCantidad(1)
+    }, [])
 
     return(
         <>
-            <button className="card-button" onClick={open}>Detalles</button>
+            <button className="card-button" onClick={open} key={data.id}>Detalles</button>
             {
                 isOpen &&
                 <div className="modal-container">
@@ -22,8 +50,8 @@ const Modal = (props) => {
                             <div className="modal-imagen">
                                 {data.fotos[0] && <Image src={data.fotos[0].foto} fill style={{objectFit: 'contain'}} alt={`Disfraz de ${data.Nombre}`} sizes='any'/>}
                             </div>
-                            <button className="modal-button">Contactar Proveedor</button>
-                            <button className="modal-button">Modificar</button>
+                            <Link href={'/inicio/admin/contactarProveedor'} className="modal-links"><button className="modal-button">Contactar Proveedor</button></Link>
+                            <Link href={`/inicio/admin/modificarProducto/${data.id}/`} className="modal-links"><button className="modal-button">Modificar</button></Link>
                         </div>
                         <div className="modal-rigth">
                             <button onClick={close} className="modal-close"><FaTimes size={20}/></button>
@@ -41,7 +69,7 @@ const Modal = (props) => {
                                     const pos = data.tallas.findIndex(t => t.talla.talla === item)
                                     const exist = data.tallas[pos]
                                     return(
-                                        <div className="modal-data">
+                                        <div className="modal-data" key={item}>
                                             <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{item}</p>
                                             <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{exist ? data.tallas[pos].maxStock : 0}</p>
                                             <p className={exist ? "modal-dataDetails" : "modal-noexist"}>{exist ? data.tallas[pos].minStock : 0}</p>
@@ -50,6 +78,22 @@ const Modal = (props) => {
                                         </div>
                                     )
                                 })}
+                            </div>
+                            <div className="modal-buy">
+                                <label className="modal-buy-label">Talla</label>
+                                <select className="modal-buy-input" defaultValue={data.tallas[0].talla.talla} onChange={changeTalla}>
+                                    {data.tallas.map(t => {
+                                        return(
+                                            <option value={JSON.stringify(t)} key={t.talla.id}>{t.talla.talla}</option>
+                                        )
+                                    })}
+                                </select>
+                                <label className="modal-buy-label">Cantidad</label>
+                                <button onClick={reduceCount} className="modal-buy-inpbutton">-</button>
+                                <input className="modal-buy-input2" type="number" value={cantidad} readOnly/>
+                                <button onClick={changeCount} className="modal-buy-inpbutton2">+</button>
+                                <label className="modal-buy-label">Sub Total ${cantidad * tallaSelected.precio}</label>
+                                <button className="modal-buy-button" onClick={prepararCompra}>Agregar A Venta</button>
                             </div>
                         </div>
                     </div>

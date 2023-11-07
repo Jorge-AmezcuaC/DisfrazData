@@ -1,0 +1,38 @@
+.vt-card{
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 5px;
+    height: 250px;
+    display: flex;
+    width: 100%;
+}
+.vt-left{
+    width: 250px;
+}
+.vt-rigth{
+    
+}
+.vt-info{
+
+}
+.vt-title{
+
+}
+.ct-desc{
+
+}
+.vt-groupLabel{
+
+}
+.vt-label{
+
+}
+.vt-groupInfo{
+
+}
+.vt-text{
+
+}
+.vt-delete{
+
+}

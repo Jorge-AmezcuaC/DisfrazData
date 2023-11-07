@@ -1,0 +1,114 @@
+.outstock-container{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 91vh;
+}
+.outstock-title{
+    color: #fff;
+    text-align: center;
+    font-family: cursive;
+    font-size: 30px;
+}
+.outcard-box{
+    background-color: #fff;
+    border: 3px solid #000;
+    border-radius: 10px;
+    margin: 20px;
+    display: flex;
+    height: 70%;
+    width: 70%;
+}
+.outcard-left{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    border-right: 3px solid #000;
+}
+.outcard-imagen{
+    position: relative;
+    width: 100%;
+    height: 84%;
+}
+.outcard-links{
+    width: 100%;
+    height: 16%;
+}
+.outcard-button{
+    height: 100%;
+    width: 100%;
+    border-top: 3px solid #000;
+    background-color: var(--color-verde-primario);
+    color: #fff;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: medium;
+}
+.outcard-button:hover{
+    cursor: pointer;
+    background-color: #fff;
+    color: var(--color-verde-primario);
+    border: var(--color-verde-primario) 3px solid;
+}
+.outcard-rigth{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60%;
+}
+.outcard-title{
+    text-align: center;
+    font-family: cursive;
+    font-weight: 700;
+    font-size: 3vw;
+}
+.outcard-desc{
+    font-size: 20px;
+    font-family: cursive;
+    padding: 10px;
+}
+.outcard-labels{
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    font-family: cursive;
+    font-weight: 600;
+    font-size: 25px;
+}
+.outcard-options{
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+
+.outcard-data{
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+.outcard-dataDetails{
+    width: 15%;
+    border: 2px solid #000;
+    text-align: center;
+    font-family: cursive;
+    font-weight: 500;
+}
+.outcard-noexist{
+    width: 15%;
+    border: 2px solid var(--color-disable);
+    text-align: center;
+    font-family: cursive;
+    font-weight: 500;
+    color: var(--color-disable);
+}
+.outcard-outstock{
+    width: 15%;
+    border: 2px solid var(--color-rojo-primario);
+    text-align: center;
+    font-family: cursive;
+    font-weight: 500;
+    color: var(--color-rojo-primario);
+
+}
