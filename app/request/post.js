@@ -20,7 +20,6 @@ const postDisfraz = MainData => {
     .then(response => response.json())
     .then(data => {
         if(MainData.fotos[0]){
-            console.log(MainData.fotos[0].foto);
             const dataForm = new FormData();
             dataForm.set('foto', MainData.fotos[0].foto);
             dataForm.set('disfraz', data.id);

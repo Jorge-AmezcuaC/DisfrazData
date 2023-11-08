@@ -1,11 +1,13 @@
 "use client"
 import { useEffect, useState } from "react"
-import { postDisfraz } from "@/app/request/post"
+import { UpdateOrCreateDisfraz } from "@/app/request/update"
 
 export default function Form(props){
     const tallas = ['XL', 'X', 'M', 'S', 'XS']
     const [proveedor, setProveedor] = useState(props.data)
-    const [values, setValues] = useState(props.disfrazToUpdate)
+    const [values, setValues] = useState({
+      tallas: []
+    })
 
     const getIdTalla = talla => {
         return props.talla.results[props.talla.results.findIndex(t => t.talla == talla)].id
@@ -31,7 +33,7 @@ export default function Form(props){
         return obj
     }
 
-    const createTalla = event => {
+    const createOrUpdateTalla = event => {
         const value = Number(event.target.value), name = event.target.name, about = event.target.alt
         let tempTallas = values.tallas
         let tempDatos = {
@@ -41,7 +43,7 @@ export default function Form(props){
             maxStock: 0,
             precio: 0,
         }
-        if(values.tallas.some(t => t.talla == getIdTalla(name))){
+        if(tempTallas.some(t => t.talla == getIdTalla(name))){
             tempTallas[getIndex(getIdTalla(name))] = changeVar(tempTallas[getIndex(getIdTalla(name))], about, value)
             setValues({...values, tallas: tempTallas})
         }else {
@@ -58,7 +60,7 @@ export default function Form(props){
         <div className="formulario-section">
           <div className="formulario-left">
             <label className="formulario-label">Nombre</label>
-            <input className="formulario-input" type="text" defaultValue={values.Nombre} onChange={event => setValues({...values, Nombre: event.target.value})}/>
+            <input className="formulario-input" type="text" defaultValue={props.disfrazToUpdate.Nombre} onChange={event => setValues({...values, Nombre: event.target.value})}/>
             <label className="formulario-label">Proveedor</label>
             <select className='formulario-input' onChange={event => setValues({...values, proveedor: event.target.value})} defaultValue={proveedor.results[props.disfrazToUpdate.proveedor - 1]}>
               {proveedor && proveedor.results.map(p => {
@@ -68,7 +70,7 @@ export default function Form(props){
               })}
             </select>
             <label className="formulario-label">Descripcion</label>
-            <textarea className="formulario-textArea" defaultValue={values.Descripcion} onChange={event => setValues({...values, Descripcion: event.target.value})}></textarea>
+            <textarea className="formulario-textArea" defaultValue={props.disfrazToUpdate.Descripcion} onChange={event => setValues({...values, Descripcion: event.target.value})}></textarea>
             <label className="formulario-label">Imagen</label>
             <input className="formulario-inputImg" type="file" accept="image/*" onChange={event => setValues({...values, fotos: [{foto:event.target.files?.[0]}]})}/>
           </div>
@@ -82,25 +84,25 @@ export default function Form(props){
             </div>
             <div className="formulario-groupOptions">
               {tallas.map(t => {
-                const pos = values.tallas.findIndex(t2 => t2.talla.talla === t)
-                const exist = values.tallas[pos]
+                const pos = props.disfrazToUpdate.tallas.findIndex(t2 => t2.talla.talla === t)
+                const exist = props.disfrazToUpdate.tallas[pos]
                 return(
                   <div className="formulario-group" key={t}>
                     <label className="formulario-groupLabel">
                       <p>{t}</p>
                       <p>=</p>
                     </label>
-                    <input defaultValue={exist && exist.maxStock} name={t} alt="max" className="formulario-groupInput" type="number" onChange={createTalla}/>
-                    <input defaultValue={exist && exist.minStock} name={t} alt="min" className="formulario-groupInput" type="number" onChange={createTalla}/>
-                    <input defaultValue={exist && exist.cantidad} name={t} alt="stock" className="formulario-groupInput" type="number" onChange={createTalla}/>
-                    <input defaultValue={exist && exist.precio} name={t} alt="precio" className="formulario-groupInput" type="number" onChange={createTalla}/>
+                    <input defaultValue={exist && exist.maxStock} name={t} alt="max" className="formulario-groupInput" type="number" onChange={createOrUpdateTalla}/>
+                    <input defaultValue={exist && exist.minStock} name={t} alt="min" className="formulario-groupInput" type="number" onChange={createOrUpdateTalla}/>
+                    <input defaultValue={exist && exist.cantidad} name={t} alt="stock" className="formulario-groupInput" type="number" onChange={createOrUpdateTalla}/>
+                    <input defaultValue={exist && exist.precio} name={t} alt="precio" className="formulario-groupInput" type="number" onChange={createOrUpdateTalla}/>
                   </div>
                 )
               })}
             </div>
           </div>
         </div>
-        <button className="formulario-button" onClick={() => console.log(values)}>Agregar Producto</button>
+        <button className="formulario-button" onClick={() => UpdateOrCreateDisfraz(values, props.disfrazToUpdate)}>Agregar Producto</button>
       </div>
     )
 }
