@@ -36,13 +36,7 @@ export default function Form(props){
     const createOrUpdateTalla = event => {
         const value = Number(event.target.value), name = event.target.name, about = event.target.alt
         let tempTallas = values.tallas
-        let tempDatos = {
-            talla: 0,
-            cantidad: 0,
-            minStock: 0,
-            maxStock: 0,
-            precio: 0,
-        }
+        let tempDatos = {}
         if(tempTallas.some(t => t.talla == getIdTalla(name))){
             tempTallas[getIndex(getIdTalla(name))] = changeVar(tempTallas[getIndex(getIdTalla(name))], about, value)
             setValues({...values, tallas: tempTallas})
