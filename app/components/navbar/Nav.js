@@ -1,10 +1,12 @@
 import Link from "next/link";
 import './nav.css'
 import UserCard from "../user/userCard";
-
-import { FaCubes, FaShoppingBasket, FaUser, FaSearch} from "react-icons/fa";
+import { FaCubes, FaShoppingBasket, FaUser,} from "react-icons/fa";
+import InputNav from "./InputNav";
 
 export default function Nav() {
+    // const username = Cookies.get('username')
+    const username = "Mi Perfil"
     return(
         <nav className="navbar">
             <div className="navbar-logo">
@@ -12,10 +14,7 @@ export default function Nav() {
                     <Link href={'/inicio'} className="navbar-title">DisfrazData</Link>
                 </h3>
             </div>
-            <div className="navbar-search">
-                <button><FaSearch/></button>
-                <input type="search" placeholder="search"/>
-            </div>
+            <InputNav/>
             <div className="navbar-options">
                 <ul>
                     <li>
@@ -25,7 +24,7 @@ export default function Nav() {
                         <Link href={'/inicio/carro'}><FaShoppingBasket color="#fff" size={40}/></Link>
                     </li>
                     <li>
-                        <div><FaUser color="#fff" size={40}/><UserCard/></div>
+                        <div><FaUser color="#fff" size={40}/><UserCard username={username}/></div>
                     </li>
                 </ul>
             </div>

@@ -53,4 +53,10 @@ async function getDisfrazCarro(id) {
     return {data2, data}
 }
 
-export {getDisfraces, getProveedor, getTalla, getDisfrazById, getNotification, getCarro, getDisfrazCarro}
+async function SearchDisfraz(params) {
+    const res = await fetch(`${host}${disfraces}?search=${params}`, {cache: 'no-store'})
+    const data = await res.json()
+    return data
+}
+
+export {getDisfraces, getProveedor, getTalla, getDisfrazById, getNotification, getCarro, getDisfrazCarro, SearchDisfraz}

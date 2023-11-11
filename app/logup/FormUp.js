@@ -18,14 +18,14 @@ const FormUp = () => {
     const Logup = () => {
         setErrors('')
         if(LogUpData.email && LogUpData.username && LogUpData.password){
-            fetch("http://localhost:8000/users/", {
+            fetch("http://localhost:8000/register/", {
                 method: "POST",
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(LogUpData)
             })
             .then(response => response.json())
             .then(data => {
-                if(data.id){
+                if(data.token){
                     setFail(false)
                     setStatus("Registro Compleatado!")
                 }else{

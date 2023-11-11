@@ -5,6 +5,7 @@
     align-items: center;
     width: 100%;
     height: 91vh;
+    overflow: auto;
 }
 .outstock-title{
     color: #fff;
@@ -32,12 +33,8 @@
     width: 100%;
     height: 84%;
 }
-.outcard-links{
-    width: 100%;
-    height: 16%;
-}
 .outcard-button{
-    height: 100%;
+    height: 16%;
     width: 100%;
     border-top: 3px solid #000;
     background-color: var(--color-verde-primario);

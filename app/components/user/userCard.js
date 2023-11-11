@@ -4,7 +4,7 @@ import './usercard.css'
 import Link from "next/link"
 import {FaSignOutAlt, FaEnvelopeOpenText} from  "react-icons/fa";
 
-const UserCard = () => {
+const UserCard = (props) => {
     const [isOpen, setIsOpen] = useState(false)
     const open = () => setIsOpen(true)
     const close = () => setIsOpen(false)
@@ -15,7 +15,7 @@ const UserCard = () => {
                 <div className="usercard-container">
                     <button onClick={close} className="usercard-action2">X</button>
                     <div className="usercard-menu">
-                        <h3 className="usercard-name">Mi Usuario</h3>
+                        <h3 className="usercard-name">{props.username}</h3>
                         <Link href="/inicio/admin/outstock"><button className="usercard-button"><FaEnvelopeOpenText size={15}/>Aleta de OutStock</button></Link>
                         <Link href="/"><button className="usercard-button"><FaSignOutAlt size={15}/>LogOut</button></Link>
                     </div>
