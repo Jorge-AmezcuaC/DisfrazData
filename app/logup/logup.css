@@ -79,15 +79,12 @@
     color: var(--color-azul-primario);
     font-weight: 600;
 }
-.logup-link{
-    width: 80%;
-}
 .logup-button{
     border: solid 3px #000;
     background-color: var(--color-azul-primario);
     color: #fff;
     font-weight: 700;
-    width: 99%;
+    width: 80%;
     height: 35px;
     font-family: cursive;
     box-shadow: 3px 3px #000;
@@ -97,4 +94,34 @@
 .logup-button:hover{
     cursor: pointer;
     background-color: #45818E;
+}
+.errors-div{
+    width: 80%;
+    height: 40px;
+    background-color: var(--color-rojo-secundario);
+    border: 2px solid var(--color-rojo-primario);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+.errors-text{
+    color: #fff;
+    font-family: cursive;
+    font-size: 10px;
+}
+.success-div{
+    width: 80%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+    background-color: var(--color-verde-primario);
+    border: 2px solid var(--color-verde-secundario);
+}
+.success-text{
+    color: #fff;
+    font-family: cursive;
+    font-size: 10px;
 }

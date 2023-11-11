@@ -1,4 +1,4 @@
-import Link from "next/link"
+import FormUp from './FormUp'
 import './logup.css'
 
 export default function LogUp() {
@@ -8,18 +8,7 @@ export default function LogUp() {
           <div className="logup-left">
             <h3 className="logup-left-title">Welcome to DisfrazData</h3>
           </div>
-          <div className="logup-rigth">
-            <h3 className="logup-rigth-title">Create your account</h3>
-            <div className="logup-input-group">
-              <input type="text" placeholder="Email" className="logup-input"/>
-              <input type="password" placeholder="Password" className="logup-input"/>
-              <div className="logup-options">
-                <p className="logup-text">Got an account?</p>
-                <Link href={'login'} className="logup-tologin">Log in here {'->'}</Link>
-              </div>
-            </div>
-              <Link href={'login'} className="logup-link"><button className="logup-button">SignUp</button></Link>
-          </div>
+          <FormUp/>
         </div>
       </div>
     )
