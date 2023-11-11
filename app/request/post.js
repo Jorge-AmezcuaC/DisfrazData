@@ -4,6 +4,7 @@ const proveedores = 'Proveedores/'
 const ventas = 'Ventas/'
 const ventaProducto = 'VentaProducto/'
 const notificaciones = 'Notificaciones/'
+const carro = 'carro/'
 const fotos = 'fotos/'
 const disfrazTalla = 'PostTallas/'
 
@@ -63,5 +64,13 @@ async function postProveedor(data) {
     .catch(e => console.log(e))
 }
 
+async function postCarro(cantidad, id) {
+    fetch(`${host}${carro}`, {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({cantidad: cantidad, disfraz: id}),
+    })
+}
 
-export {postDisfraz, postProveedor}
+
+export {postDisfraz, postProveedor, postCarro}

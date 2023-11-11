@@ -5,7 +5,7 @@ import './modal.css'
 import {FaTimes} from 'react-icons/fa'
 import Link from "next/link"
 import { useRouter } from 'next/navigation'
-import { carroCookie } from "@/app/request/cookie"
+import { postCarro } from "@/app/request/post"
 
 const Modal = (props) => {
     const data = props.data
@@ -31,7 +31,7 @@ const Modal = (props) => {
     }
 
     const prepararCompra = () => {
-        carroCookie(tallaSelected, cantidad, data)
+        postCarro(cantidad, tallaSelected.id)
         router.push('inicio/carro')
     }
 
